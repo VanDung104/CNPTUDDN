@@ -1,0 +1,44 @@
+/* Content script styles */
+
+.research-highlight-btn {
+  font-weight: 500 !important;
+  letter-spacing: 0.3px !important;
+  animation: fadeInScale 0.2s ease !important;
+}
+
+.research-highlight-btn:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.research-highlight-btn:active {
+  transform: scale(0.95) !important;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Prevent conflicts with website styles */
+.research-highlight-btn * {
+  box-sizing: border-box !important;
+}
+
+/* Make sure the button is visible on all backgrounds */
+.research-highlight-btn::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 22px;
+  z-index: -1;
+}
